@@ -16,6 +16,8 @@ dependencies:
   percent_indicator: ^4.2.3
   fl_chart: ^0.68.0
   confetti: ^0.7.0
+  flutter_stripe: ^11.4.0
+  http: ^1.2.1
 
 dev_dependencies:
   flutter_test:
