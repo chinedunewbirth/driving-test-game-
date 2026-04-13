@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:uk_driving_test/providers/test_provider.dart';
+import 'package:uk_driving_test/providers/progress_provider.dart';
+import 'package:uk_driving_test/screens/home_screen.dart';
+import 'package:uk_driving_test/theme/app_theme.dart';
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const UKDrivingTestApp());
+}
+
+class UKDrivingTestApp extends StatelessWidget {
+  const UKDrivingTestApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => TestProvider()),
+        ChangeNotifierProvider(
+          create: (_) => ProgressProvider()..loadProgress(),
+        ),
+      ],
+      child: MaterialApp(
+        title: 'UK Driving Test',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
+        themeMode: ThemeMode.system,
+        home: const HomeScreen(),
+      ),
+    );
+  }
+}
