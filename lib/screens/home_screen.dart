@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:uk_driving_test/providers/progress_provider.dart';
+import 'package:uk_driving_test/screens/auth/profile_screen.dart';
 import 'package:uk_driving_test/screens/theory/theory_menu_screen.dart';
 import 'package:uk_driving_test/screens/hazard/hazard_menu_screen.dart';
 import 'package:uk_driving_test/screens/driving/driving_menu_screen.dart';
@@ -23,6 +24,16 @@ class HomeScreen extends StatelessWidget {
               expandedHeight: 200,
               floating: false,
               pinned: true,
+              actions: [
+                IconButton(
+                  icon: const Icon(Icons.person_outline, color: Colors.white),
+                  tooltip: 'Profile',
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const ProfileScreen()),
+                  ),
+                ),
+              ],
               flexibleSpace: FlexibleSpaceBar(
                 title: const Text(
                   'UK Driving Test',
