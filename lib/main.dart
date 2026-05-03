@@ -3,14 +3,12 @@ import 'package:provider/provider.dart';
 import 'package:uk_driving_test/providers/auth_provider.dart';
 import 'package:uk_driving_test/providers/test_provider.dart';
 import 'package:uk_driving_test/providers/progress_provider.dart';
-import 'package:uk_driving_test/providers/payment_provider.dart';
 import 'package:uk_driving_test/screens/auth/login_screen.dart';
 import 'package:uk_driving_test/screens/home_screen.dart';
 import 'package:uk_driving_test/theme/app_theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  PaymentProvider.initialize();
   runApp(const UKDrivingTestApp());
 }
 
@@ -25,9 +23,6 @@ class UKDrivingTestApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => TestProvider()),
         ChangeNotifierProvider(
           create: (_) => ProgressProvider()..loadProgress(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => PaymentProvider()..loadSubscription(),
         ),
       ],
       child: MaterialApp(

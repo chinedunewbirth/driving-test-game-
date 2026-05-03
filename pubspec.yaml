@@ -1,7 +1,7 @@
 name: uk_driving_test
 description: "UK Driving Test Simulator - Theory, Hazard Perception & Virtual Driving"
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: ^3.9.2
@@ -16,13 +16,20 @@ dependencies:
   percent_indicator: ^4.2.3
   fl_chart: ^0.68.0
   confetti: ^0.7.0
-  flutter_stripe: ^11.4.0
-  http: ^1.2.1
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/icon.png"
+  adaptive_icon_background: "#00BCD4"
+  adaptive_icon_foreground: "assets/icon.png"
 
 flutter:
   uses-material-design: true

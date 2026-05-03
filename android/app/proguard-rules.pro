@@ -6,7 +6,3 @@
 -keep class io.flutter.**  { *; }
 -keep class io.flutter.plugins.**  { *; }
 -dontwarn io.flutter.embedding.**
-
-## Stripe SDK
--keep class com.stripe.android.** { *; }
--dontwarn com.stripe.android.**
